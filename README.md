@@ -18,6 +18,9 @@ To import test data start `mongod` and fill it with `mongoimport --db <DB_NAME> 
 
 ## Documentations
 Logging: [Winston](https://github.com/winstonjs/winston)
+[dotenv](https://github.com/motdotla/dotenv)
+[mongoose](https://mongoosejs.com/)
+[express](https://expressjs.com/de/4x/api.html)
 
 ## Linter
 [standardJS](https://standardjs.com/)

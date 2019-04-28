@@ -37,6 +37,8 @@ app.use((req, res, next) => {
 })
 
 app.listen(port, err => {
-  if (err !== undefined) logger.error(`Error on startup http: ${err}`)
+  if (err) logger.error(`Error on startup http: ${err}`)
   else logger.info(`Listening http on port: ${port}`)
 })
+
+process.on('unhandledRejection', err => logger.error(err.stack))

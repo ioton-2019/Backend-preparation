@@ -1,7 +1,7 @@
 {
-  "name": "iothon",
+  "name": "iothon-backend-preparation",
   "version": "0.0.1",
-  "description": "Backend preperation for IoThon",
+  "description": "Backend preparation for IoThon",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/nodemon/bin/nodemon.js app.js",
