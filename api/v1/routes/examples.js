@@ -49,7 +49,7 @@ exampleRouter.route('/:id')
   })
   .delete((req, res, next) => {
     ExampleModel.findOneAndRemove({ _id: req.params.id }, (err, item) => {
-      if (!err) res.status(204).json({ 'message': 'Successfully deleted', 'code': 204 })
+      if (!err) res.status(200).json({ 'message': 'Successfully deleted', 'code': 200 })
       else res.status(404).json({ 'error': `Could not find and delete by this ID: ${req.params.id}`, 'code': 404 })
     })
   })

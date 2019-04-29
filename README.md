@@ -17,10 +17,10 @@ To import test data start `mongod` and fill it with `mongoimport --db <DB_NAME> 
 
 
 ## Documentations
-Logging: [Winston](https://github.com/winstonjs/winston)
-[dotenv](https://github.com/motdotla/dotenv)
-[mongoose](https://mongoosejs.com/)
-[express](https://expressjs.com/de/4x/api.html)
+Logging: [Winston](https://github.com/winstonjs/winston)  
+Environment variables: [dotenv](https://github.com/motdotla/dotenv)  
+MongoDB object modeling: [mongoose](https://mongoosejs.com/)  
+Express framework: [express](https://expressjs.com/de/4x/api.html)
 
 ## Linter
 [standardJS](https://standardjs.com/)

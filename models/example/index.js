@@ -14,7 +14,8 @@ const logger = requireWrapper('helpers/logger')
 const Schema = mongoose.Schema
 const ExampleSchema = new Schema(
   {
-    title: { type: String, required: true }
+    title: { type: String, required: true },
+    hasNewProperty: { type: String }
   },
   {
     _id: true,
@@ -25,6 +26,7 @@ const ExampleSchema = new Schema(
 
 const mongooseOptions = {
   useNewUrlParser: true,
+  useFindAndModify: false,
   socketTimeoutMS: 0,
   keepAlive: true,
   autoReconnect: true,
@@ -41,28 +43,6 @@ if (process.env.DB_USER && process.env.DB_PASS) {
 mongoose.Promise = global.Promise
 
 logger.info('MongoDB: trying initial connection')
-
-// (async () => {
-//   try {
-//     const db = await mongoose.createConnection()
-//
-//     db.on('error', e => logger.error(`MongoDB: error ${e}`))
-//     db.on('connected', e => logger.info(`MongoDB: is connected`))
-//     db.on('disconnecting', () => logger.warn('MongoDB: is disconnecting!'))
-//     db.on('disconnected', () => logger.warn('MongoDB: is disconnected!'))
-//     db.on('reconnected', () => logger.info(`MongoDB: is reconnected`))
-//     db.on('timeout', e => logger.warn(`MongoDB: timeout ${e})`))
-//     db.on('close', () => logger.warn('MongoDB: connection closed'))
-//
-//     db.openUri(connectionString, mongooseOptions)
-//
-//     db.model('Example', ExampleSchema)
-//   } catch (err) {
-//     logger.error('MongoDB: Initial connection failed!')
-//     logger.error('Make sure MongoDB is running an connection URL is correct!')
-//     logger.error(err)
-//   }
-// })()
 
 const db = mongoose.createConnection()
 
